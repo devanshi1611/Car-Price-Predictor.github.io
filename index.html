@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <form action="{{ url_for('predict')}}" method="post">
+
+    <div class="main row">
+        <div class="img col">
+            <img src="img.jpeg">
+        </div>
+        
+    <div class="content col">            
+            <h1 class="head">CPP - A Predictive Analysis</h1>
+            <h2>Year</h2><input id="fill" name="Year" type="number">
+            <h2>What is the Showroom Price?(In lakhs)</h2><input id="fill" name="Present_Price" required="required">
+            <h2>How Many Kilometers Drived?</h2><input id="fill" name="Kms_Driven" required="required">
+            <h2>How many owners previously had the car(0 or 1 or 3) ?</h2><input id="fill" name="Owner" required="required">
+            
+            <h2>What Is the Fuel type?</h2><br>
+            <select name="Fuel_Type_Petrol" id="option" required="required">
+                <option value="Petrol" class="list">Petrol</option>
+                <option value="Diesel" class="list">Diesel</option>
+                <option value="CNG" class="list">CNG</option>
+            </select>
+
+            <h2>Are you a Dealer or an Individual?</h2><br>
+            <select name="Seller_Type_Individual" id="option" required="required">
+                <option value="Dealer" class="list">Dealer</option>
+                <option value="Individual" class="list">Individual</option>
+            </select>
+
+            <h2>Transmission Type</h2><br>
+            <select name="Transmission_Mannual" id="option" required="required">
+                <option value="Mannual" class="list">Manual Car</option>
+                <option value="Automatic" class="list">Automatic Car</option>
+            </select>
+
+            <br><br><br><br>
+            <button id="sub" type="submit">Calculate</button>
+            
+        </form>
+        <br><p>--------------------------------------------------------------------------</p>
+        <h2>The Prediction is...<h2>        
+    </div>
+    </div>
+</body>
+
+</html>
